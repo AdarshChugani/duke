@@ -1,13 +1,8 @@
-<<<<<<< Updated upstream
-import java.util.*;
-=======
-import org.jetbrains.annotations.NotNull;
-
 import java.time.format.DateTimeParseException;
+import java.util.*;
 import java.util.*;
 import java.io.*;
 import java.time.*;
->>>>>>> Stashed changes
 
 public class Duke {
     public static void main(String[] args) {
@@ -76,7 +71,7 @@ public class Duke {
                             throw new DukeException("It appears that no timing was provided for this event!");
                         }
 
-                        taskList.add(new Event(commands[0].substring(6, commands[0].length()), subS[0], commands[1].substring(subS[0].length())));
+                        taskList.add(new Event(commands[0].substring(6, commands[0].length()), commands[1].substring(subS[0].length()+1)));
                     } else if (eventType[0].equals("deadline")) {
                         if(commands.length == 1) {
                             throw new DukeException("It appears that no due date provided for this deadline!");
@@ -115,9 +110,6 @@ public class Duke {
         }
 
     }
-<<<<<<< Updated upstream
-=======
-
     public static void saveData(ArrayList<Task> taskList) throws IOException{
         FileWriter wr = new FileWriter("data/duke.txt");
         wr.write("");
@@ -175,5 +167,4 @@ public class Duke {
 
         }
     }
->>>>>>> Stashed changes
 }
